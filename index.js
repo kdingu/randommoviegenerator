@@ -38,7 +38,7 @@ window.addEventListener("resize", () => {
 });
 
 navbarBurger.addEventListener("click", () => {
-  navbarMenu.classList.remove("is-active");
+  navbarMenu.classList.toggle("is-active");
 });
 
 randomBtn.addEventListener("click", () => {
