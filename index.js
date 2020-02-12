@@ -20,6 +20,7 @@ const modalBtn = document.querySelector(".modal-close");
 const modal = document.querySelector("#modal-player");
 const modalPoster = document.querySelector("#modal-poster");
 const randomBtn = document.querySelector("#random-movie-btn");
+const navbar = document.querySelector(".navbar");
 const navbarBurger = document.querySelector(".navbar-burger");
 const navbarMenu = document.querySelector(".navbar-menu");
 
@@ -37,10 +38,9 @@ window.addEventListener("resize", () => {
 });
 
 navbarBurger.addEventListener("click", () => {
-  navbarMenu.classList.toggle("is-active");
+  navbarMenu.classList.remove("is-active");
 });
 
-// let genreFilter;
 randomBtn.addEventListener("click", () => {
   tutorialContent.classList.add("hide");
   loader.classList.add("is-active");
@@ -100,7 +100,8 @@ const randomMovieTrailer = async () => {
         }
         tutorialContent.classList.remove("hide");
         loader.classList.remove("is-active");
-        modal.classList.toggle("is-active");
+        modal.classList.add("is-active");
+        navbar.classList.add("hide");
       } else {
         // console.log("Videos contained no trailer.. Rerun");
         randomMovieTrailer();
@@ -233,11 +234,13 @@ async function onYouTubeIframeAPIReady() {
 
 // Add click listeners to close modal and stop video
 modalBg.addEventListener("click", () => {
-  modal.classList.toggle("is-active");
+  navbar.classList.remove("hide");
+  modal.classList.remove("is-active");
   player.stopVideo();
 });
 
 modalBtn.addEventListener("click", () => {
-  modal.classList.toggle("is-active");
+  navbar.classList.remove("hide");
+  modal.classList.remove("is-active");
   player.stopVideo();
 });
