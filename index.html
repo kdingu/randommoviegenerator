@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="localstyle.css" />
+  </head>
+
+  <body>
+    <section class="hero is-fullheight bg-img">
+      <nav
+        class="navbar is-transparent"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <a class="navbar-item" href="index.html">
+            <img src="./content/LogoMakr_white.png" />
+          </a>
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start"></div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="container">
+                <div class="columns">
+                  <div class="column">
+                    <div id="autocomplete" class="dropdown is-right">
+                      <!-- autocomplete goes here -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hero-body">
+        <div class="container">
+          <div class="column tutorial has-text-centered">
+            <div class="loader-wrapper">
+              <div class="loader is-loading"></div>
+            </div>
+            <div class="tutorial-content">
+              <h1 class="title is-1">
+                Search for a movie to get the trailer or...
+              </h1>
+              <p>
+                <a
+                  id="random-movie-btn"
+                  class="button is-warning is-outlined is-medium"
+                >
+                  Randomize !!!
+                </a>
+              </p>
+              <div class="subtitle is-6 mg-top-20">
+                Genre filtering works only when randomizing a movie
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="modal-player">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="inner-container">
+                <!-- iframe from api goes here -->
+                <div id="player"></div>
+
+                <h1 id="title" class="title is-4">.</h1>
+                <p id="genre" class="subtitle is-6"></p>
+                <p id="overview" class="subtitle is-5"></p>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="utils.js"></script>
+    <script src="autocomplete.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
