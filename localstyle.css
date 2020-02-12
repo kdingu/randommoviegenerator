@@ -109,3 +109,13 @@ html::-webkit-scrollbar {
   opacity: 0;
   transition: visibility 0.3s, opacity 0.2s linear;
 }
+
+.navbar-menu {
+  width: auto;
+  float: right;
+}
+
+.navbar-menu.is-active {
+  background: none;
+  animation: navAnim 0.3s linear;
+}

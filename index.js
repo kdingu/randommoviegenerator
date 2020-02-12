@@ -20,6 +20,8 @@ const modalBtn = document.querySelector(".modal-close");
 const modal = document.querySelector("#modal-player");
 const modalPoster = document.querySelector("#modal-poster");
 const randomBtn = document.querySelector("#random-movie-btn");
+const navbarBurger = document.querySelector(".navbar-burger");
+const navbarMenu = document.querySelector(".navbar-menu");
 
 const titleElement = document.querySelector("#title");
 const genreElement = document.querySelector("#genre");
@@ -27,6 +29,16 @@ const overviewElement = document.querySelector("#overview");
 
 const loader = document.querySelector(".loader-wrapper");
 const tutorialContent = document.querySelector(".tutorial-content");
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1023) {
+    navbarMenu.classList.remove("is-active");
+  }
+});
+
+navbarBurger.addEventListener("click", () => {
+  navbarMenu.classList.toggle("is-active");
+});
 
 // let genreFilter;
 randomBtn.addEventListener("click", () => {
