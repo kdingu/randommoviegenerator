@@ -224,7 +224,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 let player;
 async function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player");
+  player = new YT.Player("player", {
+    playerVars: {
+      modestbranding: 1
+    }
+  });
 }
 
 // Add click listeners to close modal and stop video
